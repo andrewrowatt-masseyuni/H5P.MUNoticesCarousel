@@ -1,6 +1,6 @@
 [ 
   {
-  "name": "teachers",
+  "name": "notices",
   "type": "list",
   "widgets": [
       {
@@ -8,28 +8,34 @@
         "label": "Default"
       }
     ],
-  "label": "Teachers",
-  "entity": "teacher",
+  "label": "Notices",
+  "entity": "notice",
   "min": 1,
   "max": 20,
   "field": {
-	  "name": "teacher",
+	  "name": "notice",
 	  "type": "group",
-	  "label": "Teacher",
-	  "fields": [
+	  "label": "Notice",
+	  "fields": [ 
+		"Category" (Support, Information, Exams, ???)
+		"Update" (date / freetext with convention)
+		"Heading"
+		"Content" (html - might need different parts here, each with additional attributes e.g. text, alert-info, alert-error etc, or use tokens [alert-info] [/alert-info])
+		"Image"
+		"More information" (mailto: or https:) with convention (e.g., by mailto:)
 		{
 		  "name": "image",
 		  "type": "image",
 		  "label": "Profile picture",
 		  "optional": true,
-		  "description": "Picture of teacher. If left blank a placeholder image will be displayed. Image dimensions should ideally be 150px by 150px to avoid scaling."
+		  "description": "Picture of notice. If left blank a placeholder image will be displayed. Image dimensions should ideally be 150px by 150px to avoid scaling."
 		},
 		{
 		  "name": "name",
 		  "type": "text",
 		  "label": "Name",
 		  "default": "",
-		  "description": "Name of teacher"
+		  "description": "Name of notice"
 		},
 		{
 		  "name": "iwi",
@@ -37,14 +43,14 @@
 		  "label": "Iwi/hapū",
 		  "optional": true,
 		  "default": "",
-		  "description": "Enter one or more iwi/hapū, or leave blank to not display this field for this teacher."
+		  "description": "Enter one or more iwi/hapū, or leave blank to not display this field for this notice."
 		},
 		{
 		  "name": "role",
 		  "type": "text",
 		  "label": "Role",
 		  "default": "",
-		  "description": "Role of teacher e.g. Course Coordinator, Tutor"
+		  "description": "Role of notice e.g. Course Coordinator, Tutor"
 		},
 				{
 		  "name": "office",
@@ -52,7 +58,7 @@
 		  "label": "Office",
 		  "optional": true,
 		  "default": "",
-		  "description": "Office location and number. Leave blank to not display this field for this teacher."
+		  "description": "Office location and number. Leave blank to not display this field for this notice."
 		},
 				{
 		  "name": "officebuilding",
@@ -60,7 +66,7 @@
 		  "label": "Building",
 		  "optional": true,
 		  "default": "",
-		  "description": "Office building. Leave blank to not display this field for this teacher."
+		  "description": "Office building. Leave blank to not display this field for this notice."
 		},
 				{
 		  "name": "officecampus",
@@ -68,7 +74,7 @@
 		  "label": "Campus",
 		  "optional": true,
 		  "default": "",
-		  "description": "Office campus. Leave blank to not display this field for this teacher."
+		  "description": "Office campus. Leave blank to not display this field for this notice."
 		},
 		{
 		  "name": "officehours",
@@ -76,7 +82,7 @@
 		  "label": "Office Hours",
 		  "optional": true,
 		  "default": "",
-		  "description": "Office Hours. Leave blank to not display this field for this teacher.",
+		  "description": "Office Hours. Leave blank to not display this field for this notice.",
 		  "enterMode": "p",
 		"tags": [
 			  "strong",
@@ -92,7 +98,7 @@
 		  "label": "Phone",
 		  "optional": true,
 		  "default": "",
-		  "description": "Contact phone number or extension. Leave blank to not display this field for this teacher."
+		  "description": "Contact phone number or extension. Leave blank to not display this field for this notice."
 		}
 		,
 		{
@@ -101,7 +107,7 @@
 		  "label": "Email",
 		  "optional": true,
 		  "default": "",
-		  "description": "Email address. Displayed as a clickable link. Leave blank to not display this field for this teacher."
+		  "description": "Email address. Displayed as a clickable link. Leave blank to not display this field for this notice."
 		}
 		,
 		{
@@ -112,7 +118,7 @@
 		  "label": "Short biography",
 		  "optional": true,
 		  "default": "",
-		  "description": "Short biography. Two or three lines is the recommended maximum. Leave blank to not display this field for this teacher."
+		  "description": "Short biography. Two or three lines is the recommended maximum. Leave blank to not display this field for this notice."
 		}
 		,
 		{
@@ -121,7 +127,7 @@
 		  "label": "Link",
 		  "optional": true,
 		  "default": "",
-		  "description": "A link to further information for this teacher. If present, a \"More...\" link will be displayed after the teacher details. Leave blank to not use the feature for this teacher."
+		  "description": "A link to further information for this notice. If present, a \"More...\" link will be displayed after the notice details. Leave blank to not use the feature for this notice."
 		}
 	  ]
 	}
@@ -134,19 +140,11 @@
   "options": [
     {
       "value": "auto",
-      "label": "Auto (Three columns, or two columns if four or less items)"
+      "label": "Auto"
     },
     {
-      "value": "2",
-      "label": "Two columns"
-    },
-    {
-      "value": "3",
-      "label": "Three columns"
-    },
-    {
-      "value": "4",
-      "label": "Four columns"
+      "value": "1",
+      "label": "One column"
     }
   ],
   "default": "auto"
