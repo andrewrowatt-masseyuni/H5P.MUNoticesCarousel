@@ -1,0 +1,28 @@
+{
+  "title": "MU Teaching Team",
+  "description": "Teaching Team widget for MU template learning section.",
+  "majorVersion": 1,
+  "minorVersion": 2,
+  "patchVersion": 75,
+  "runnable": 1,
+  "author": "Massey University",
+  "license": "cc-by-sa",
+  "machineName": "H5P.MUTeachingTeam",
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 0
+  },
+  "preloadedJs": [
+    { "path": "mu-teaching-team.js" }
+  ],
+  "preloadedCss": [
+    {"path": "mu-teaching-team.css"}
+  ],
+  "editorDependencies": [
+    {
+      "machineName": "H5PEditor.VerticalTabs",
+      "majorVersion": 1,
+      "minorVersion": 3
+    }
+  ]
+}

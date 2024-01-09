@@ -1,0 +1,163 @@
+@import url("//fonts.googleapis.com/css?family=Roboto:500,100,400,300");
+
+@font-face{font-family:'FontAwesome';font-style:normal;font-weight:400;src:url(//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0);src:url('//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url(//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'),url(//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'),url('//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg')}
+
+.h5p-teachers {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  
+  font-family: "Roboto",Georgia,"Times New Roman",Times,serif;
+  font-weight: 300;
+  font-size: 16px; /* Snap default is 18px */
+  line-height: 1.4em;
+  color: #565656;
+  gap:8px;
+}
+
+.h5p-teachers .teacher {
+    border-color: #d1d6da;
+    border-style: solid;
+    border-width: 1px;
+    width: 242px;
+    border-radius: 12px;
+	display: block;
+	position: relative;
+	padding-bottom: 24px; /* Space for more info */
+}
+
+.h5p-teachers.h5p-teachers-twocol .teacher {
+    width: 366px;
+}
+
+.h5p-teachers.h5p-teachers-twocol .teacher:nth-child(2n) {
+	margin-right:0;
+}
+
+.h5p-teachers.h5p-teachers-fourcol .teacher {
+    width: 187px;
+}
+
+.h5p-teachers a.teacher:hover {
+	box-shadow: 0 0 0.4em;
+	text-decoration: none;
+}
+
+.h5p-teachers .teacher div.teacher-item {
+	margin: 0 18px 5px 18px;
+	color: rgb(86, 86, 86);
+}
+
+.h5p-teachers .teacher .teacher-item-icon::before {
+    font-family: 'FontAwesome';
+    color: rgb(200, 200, 200);
+    display: inline-block;
+    width: 16px;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.h5p-teachers .teacher div.teacher-label {
+    font-size: 13px;
+	color: rgb(91, 112, 131);
+	margin: 0 18px;
+}
+
+.h5p-teachers .teacher .profile-image {
+	width: 150px;
+	height: 150px;
+	object-fit: contain;
+	margin: 1em auto;
+	display: block;
+}
+
+.h5p-teachers .teacher .name-text {
+	font-size: 18px;
+}
+
+.h5p-teachers .teacher .iwi-text {
+}
+
+.h5p-teachers .teacher .role-text {
+	font-weight: 400;
+}
+
+/* Compact spacing for office information */
+.h5p-teachers .teacher .office > div {
+	margin-bottom: 0;
+}
+
+.h5p-teachers .teacher .office div:last-child {
+	margin-bottom: 5px;
+}
+
+/* Only show icon for first office line (whatever it may be) */
+.h5p-teachers .teacher .office .teacher-item:first-child:before {
+	content: '\f041';
+}
+
+.h5p-teachers .teacher .office .office-text::before {
+	content: '';
+}
+
+.h5p-teachers .teacher .officehours-text::before {
+}
+
+.h5p-teachers .teacher .teacher-label.teacher-item-icon.officehours-text::before {
+	content: '\f017';
+}
+
+.h5p-teachers .teacher .officehours-text:not(.teacher-item-icon) {
+	margin-left: 42px;
+}
+
+.h5p-teachers .teacher .officehours-text p {
+	margin-bottom:0;
+}
+
+/* We don't mind if the email clips as it will be clickable */
+.h5p-teachers .teacher .email-text {
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.h5p-teachers .teacher .email-text::before {
+	content: '\f003';
+}
+
+.h5p-teachers .teacher .email-text a {
+	color: inherit;
+}
+
+.h5p-teachers .teacher .phone-text {
+}
+
+.h5p-teachers .teacher .phone-text::before {
+	content: '\f095';
+}
+
+.h5p-teachers .teacher hr {
+	margin: 0 18px 5px 18px;
+	background-color: #d1d6da;
+	height: 1px;
+}
+
+.h5p-teachers .teacher .shortbio-text {
+	font-size: 15px;
+}
+
+.h5p-teachers .teacher .shortbio-text::before {
+	display: none;
+}
+
+.h5p-teachers .teacher .link-text {
+    font-size: 13px;
+	color: rgb(91, 112, 131);
+	
+	position: absolute;
+	bottom: 12px;
+	right: 12px;
+	margin: 0;
+}

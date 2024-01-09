@@ -1,0 +1,154 @@
+[ 
+  {
+  "name": "teachers",
+  "type": "list",
+  "widgets": [
+      {
+        "name": "VerticalTabs",
+        "label": "Default"
+      }
+    ],
+  "label": "Teachers",
+  "entity": "teacher",
+  "min": 1,
+  "max": 20,
+  "field": {
+	  "name": "teacher",
+	  "type": "group",
+	  "label": "Teacher",
+	  "fields": [
+		{
+		  "name": "image",
+		  "type": "image",
+		  "label": "Profile picture",
+		  "optional": true,
+		  "description": "Picture of teacher. If left blank a placeholder image will be displayed. Image dimensions should ideally be 150px by 150px to avoid scaling."
+		},
+		{
+		  "name": "name",
+		  "type": "text",
+		  "label": "Name",
+		  "default": "",
+		  "description": "Name of teacher"
+		},
+		{
+		  "name": "iwi",
+		  "type": "text",
+		  "label": "Iwi/hapū",
+		  "optional": true,
+		  "default": "",
+		  "description": "Enter one or more iwi/hapū, or leave blank to not display this field for this teacher."
+		},
+		{
+		  "name": "role",
+		  "type": "text",
+		  "label": "Role",
+		  "default": "",
+		  "description": "Role of teacher e.g. Course Coordinator, Tutor"
+		},
+				{
+		  "name": "office",
+		  "type": "text",
+		  "label": "Office",
+		  "optional": true,
+		  "default": "",
+		  "description": "Office location and number. Leave blank to not display this field for this teacher."
+		},
+				{
+		  "name": "officebuilding",
+		  "type": "text",
+		  "label": "Building",
+		  "optional": true,
+		  "default": "",
+		  "description": "Office building. Leave blank to not display this field for this teacher."
+		},
+				{
+		  "name": "officecampus",
+		  "type": "text",
+		  "label": "Campus",
+		  "optional": true,
+		  "default": "",
+		  "description": "Office campus. Leave blank to not display this field for this teacher."
+		},
+		{
+		  "name": "officehours",
+		  "type": "text","widget": "html",
+		  "label": "Office Hours",
+		  "optional": true,
+		  "default": "",
+		  "description": "Office Hours. Leave blank to not display this field for this teacher.",
+		  "enterMode": "p",
+		"tags": [
+			  "strong",
+			  "em",
+			  "u",
+			  "a",
+			  "hr"
+		]
+		},
+		{
+		  "name": "phone",
+		  "type": "text",
+		  "label": "Phone",
+		  "optional": true,
+		  "default": "",
+		  "description": "Contact phone number or extension. Leave blank to not display this field for this teacher."
+		}
+		,
+		{
+		  "name": "email",
+		  "type": "text",
+		  "label": "Email",
+		  "optional": true,
+		  "default": "",
+		  "description": "Email address. Displayed as a clickable link. Leave blank to not display this field for this teacher."
+		}
+		,
+		{
+		  "name": "shortbio",
+		  "type": "text",
+		  "widget": "textarea",
+		  "maxLength": 2048,
+		  "label": "Short biography",
+		  "optional": true,
+		  "default": "",
+		  "description": "Short biography. Two or three lines is the recommended maximum. Leave blank to not display this field for this teacher."
+		}
+		,
+		{
+		  "name": "link",
+		  "type": "text",
+		  "label": "Link",
+		  "optional": true,
+		  "default": "",
+		  "description": "A link to further information for this teacher. If present, a \"More...\" link will be displayed after the teacher details. Leave blank to not use the feature for this teacher."
+		}
+	  ]
+	}
+},
+{
+  "name": "layout",
+  "type": "select",
+  "label": "Layout",
+  "description": "Layout of items.",
+  "options": [
+    {
+      "value": "auto",
+      "label": "Auto (Three columns, or two columns if four or less items)"
+    },
+    {
+      "value": "2",
+      "label": "Two columns"
+    },
+    {
+      "value": "3",
+      "label": "Three columns"
+    },
+    {
+      "value": "4",
+      "label": "Four columns"
+    }
+  ],
+  "default": "auto"
+}
+]
