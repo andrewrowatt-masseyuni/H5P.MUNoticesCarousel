@@ -2,162 +2,215 @@
 
 @font-face{font-family:'FontAwesome';font-style:normal;font-weight:400;src:url(//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0);src:url('//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url(//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0) format('woff'),url(//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0) format('truetype'),url('//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg')}
 
-.h5p-teachers {
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  
-  font-family: "Roboto",Georgia,"Times New Roman",Times,serif;
-  font-weight: 300;
-  font-size: 16px; /* Snap default is 18px */
-  line-height: 1.4em;
-  color: #565656;
-  gap:8px;
+/* via brand.massey.ac.nz */
+:root {
+	--color-mu-blue: #004b8d;
+	--color-mu-gold: #e4a024;
+	--color-mu-blue-mid: #0660af;
+	--color-mu-blue-dark: #0d5493;
+	--color-mu-light-blue: #007bc7;
+	--color-mu-light-blue-websafe: #0090e9;
+	--color-mu-grey-blue: #ccdbe8;
+	--color-mu-grey-blue-mid: #d8e4ed;
+	--color-mu-grey-blue-dark: #bbd5e6;
+	--color-mu-grey-light-blue: #e5edf3;
+	--color-mu-grey-lighter-blue: #f2f6f9;
+	--color-mu-grey-lightish-blue: #ebf1f6;
+	--color-mu-grey-very-light-blue: #fafbfd;
+	--color-mu-red: #ed163c;
+	--color-mu-volcano: #b32317;
+	--color-mu-poroporo: #812990;
+	--color-mu-gold-light: #f4bd58;
+	--color-mu-tawa: #2d3952;
+	--color-mu-tawa-mid: #374157;
+	--color-mu-kuku: #5e6738;
+	--color-mu-ponga: #92af2b;
+	--color-mu-tui: #f37021;
+	--color-mu-brown: #986200;
+	--color-white: #fff;
+	--color-black: #000;
+	--color-grey-10: #f3f3f3;
+	--color-grey-20: #dcdcdc;
+	--color-grey-30: #b8b9ba;
+	--color-grey-40: #a6a6a6;
+	--color-grey-50: #939393;
+	--color-grey-60: #838383;
+	--color-grey-65: #616161;
+	--color-grey-70: #595959;
+	--color-grey-80: #3a3a3a;
+	--color-grey-90: #202020;
+	--color-grey-95: #141414;
+	--color-mu-blue-tint: #ebf6ff;
+	--color-mu-blue-tint-lighter: #f5fbff;
+	--color-mu-volcano-tint: #fff0ef;
+	--color-mu-ponga-tint: #f5fbe2;
+	--color-mu-ponga-tint-darker: #d3e398;
+	--color-mu-ponga-tint-lighter: #fdfff5;
+	--color-mu-tui-tint: #ffede2;
+	--color-mu-tui-tint-darker: #efcc97;
+	--color-mu-tui-tint-lighter: #fff6f1;
+	--color-mu-light-blue-tint: #d9e8f1;
+	--color-mu-gold-tint: #fff8eb;
 }
 
-.h5p-teachers .teacher {
-    border-color: #d1d6da;
-    border-style: solid;
-    border-width: 1px;
-    width: 242px;
-    border-radius: 12px;
+#stream-dashboard-notices {
+	--item_margin: 20px;
+	--default_spacing: 0.625rem;
+	--controls_margin:calc(var(--default_spacing) + 40px);
+	border-left: 4px solid var(--color-mu-gold-light);
+	padding-left: var(--item_margin);
+	margin: var(--default_spacing) 0 var(--controls_margin) 0;
+}
+
+#stream-dashboard-notices .item {
+	height:14em;
+	overflow: auto;
+}
+
+#stream-dashboard-notices .item h5 {
+	font-size: 2rem;
+}
+
+.item__info {
+	display: flex;
+	font-weight: 500;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	line-height: 1.15;
+}
+
+.item__heading {
+	margin-top: var(--default_spacing);
+	line-height: 1.2;
+	word-break: break-word;
+}
+
+.item__heading h6 {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+.item__heading img {
 	display: block;
-	position: relative;
-	padding-bottom: 24px; /* Space for more info */
+	margin: 0;
+	padding: 0;
+	float: right;
+	max-height: 11em;
+	max-width: 50%;
 }
 
-.h5p-teachers.h5p-teachers-twocol .teacher {
-    width: 366px;
+.item__content {
+	line-height: 1.35;
 }
 
-.h5p-teachers.h5p-teachers-twocol .teacher:nth-child(2n) {
-	margin-right:0;
+.item__content p {
+	margin: 0 0 var(--default_spacing) 0;
+	padding: 0;
 }
 
-.h5p-teachers.h5p-teachers-fourcol .teacher {
-    width: 187px;
+.item__content p a,
+.item__more_info a[href^="mailto:"] {
+	border-bottom: 1.5px solid #074c8833 !important;
+	text-decoration: none !important;
+	transition: all 0.3s ease;
 }
 
-.h5p-teachers a.teacher:hover {
-	box-shadow: 0 0 0.4em;
+.item__content p a:hover {
+	border-bottom: 1.5px solid #074c88cc !important;
+	text-decoration: none !important;
+}
+
+.item__content div.alert {
+	margin-top: var(--default_spacing);
+	margin-bottom: var(--default_spacing);
+	padding: var(--default_spacing);
+}
+
+.item__content div.alert a {
+	font-weight: 500;
+	color: inherit !important;
+}
+
+.item__more_info {
+	margin-top: var(--default_spacing);
+	font-weight: 500;
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	line-height: 1.15;
+}
+
+.item__more_info a {
 	text-decoration: none;
 }
 
-.h5p-teachers .teacher div.teacher-item {
-	margin: 0 18px 5px 18px;
-	color: rgb(86, 86, 86);
+.item__info_category {
+	margin-right: 10px;
 }
 
-.h5p-teachers .teacher .teacher-item-icon::before {
-    font-family: 'FontAwesome';
-    color: rgb(200, 200, 200);
-    display: inline-block;
-    width: 16px;
-    text-align: center;
-    margin-right: 8px;
+.category_alert {
+	color: var(--color-mu-red);
 }
 
-.h5p-teachers .teacher div.teacher-label {
-    font-size: 13px;
-	color: rgb(91, 112, 131);
-	margin: 0 18px;
+.category_exams {
+	color: var(--color-mu-ponga);
 }
 
-.h5p-teachers .teacher .profile-image {
-	width: 150px;
-	height: 150px;
-	object-fit: contain;
-	margin: 1em auto;
-	display: block;
+.category_support {
+	color: var(--color-mu-light-blue);
 }
 
-.h5p-teachers .teacher .name-text {
-	font-size: 18px;
+.category_information {
+	color: var(--color-mu-light-blue);
 }
 
-.h5p-teachers .teacher .iwi-text {
-}
-
-.h5p-teachers .teacher .role-text {
-	font-weight: 400;
-}
-
-/* Compact spacing for office information */
-.h5p-teachers .teacher .office > div {
-	margin-bottom: 0;
-}
-
-.h5p-teachers .teacher .office div:last-child {
-	margin-bottom: 5px;
-}
-
-/* Only show icon for first office line (whatever it may be) */
-.h5p-teachers .teacher .office .teacher-item:first-child:before {
-	content: '\f041';
-}
-
-.h5p-teachers .teacher .office .office-text::before {
-	content: '';
-}
-
-.h5p-teachers .teacher .officehours-text::before {
-}
-
-.h5p-teachers .teacher .teacher-label.teacher-item-icon.officehours-text::before {
-	content: '\f017';
-}
-
-.h5p-teachers .teacher .officehours-text:not(.teacher-item-icon) {
-	margin-left: 42px;
-}
-
-.h5p-teachers .teacher .officehours-text p {
-	margin-bottom:0;
-}
-
-/* We don't mind if the email clips as it will be clickable */
-.h5p-teachers .teacher .email-text {
-	white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.h5p-teachers .teacher .email-text::before {
-	content: '\f003';
-}
-
-.h5p-teachers .teacher .email-text a {
-	color: inherit;
-}
-
-.h5p-teachers .teacher .phone-text {
-}
-
-.h5p-teachers .teacher .phone-text::before {
-	content: '\f095';
-}
-
-.h5p-teachers .teacher hr {
-	margin: 0 18px 5px 18px;
-	background-color: #d1d6da;
-	height: 1px;
-}
-
-.h5p-teachers .teacher .shortbio-text {
-	font-size: 15px;
-}
-
-.h5p-teachers .teacher .shortbio-text::before {
+.item__info_update:empty {
 	display: none;
 }
 
-.h5p-teachers .teacher .link-text {
-    font-size: 13px;
-	color: rgb(91, 112, 131);
-	
+.item__info_update {
+	font-weight: 500;
+	color: var(--color-grey-30);
+	padding-left: 0.8125rem;
+	position: relative;
+	display: block;
+}
+
+.item__info_update:before {
 	position: absolute;
-	bottom: 12px;
-	right: 12px;
-	margin: 0;
+	top: calc(50% - 3px);
+	left: 0;
+	width: 0.3125rem;
+	height: 0.3125rem;
+	background-color: var(--color-grey-30);
+	border-radius: 50%;
+	content: '';
+}
+
+#stream-dashboard-notices a.carousel-control {
+	top: auto;
+	bottom: 0;
+	height: 40px;
+	background: #fff;
+	border: 1px solid #ddd;
+	margin-bottom: calc(0px - var(--controls_margin));
+	opacity: 1;
+}
+
+#stream-dashboard-notices .carousel-indicators {
+	margin: 0 auto calc(0px - var(--controls_margin)) auto;
+	bottom: 0;
+	z-index: auto;
+}
+
+#stream-dashboard-notices .carousel-indicators button {
+	background-color: #fff;
+	width: 35px;
+	height: 40px;
+	margin-right: .5em;
+	border: 1px solid #ddd;
+	line-height: 1;
+}
+
+#stream-dashboard-notices .carousel-indicators .active {
+	border-color: #074c88;
 }

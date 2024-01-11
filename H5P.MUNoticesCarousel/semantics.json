@@ -17,117 +17,85 @@
 	  "type": "group",
 	  "label": "Notice",
 	  "fields": [ 
-		"Category" (Support, Information, Exams, ???)
-		"Update" (date / freetext with convention)
-		"Heading"
-		"Content" (html - might need different parts here, each with additional attributes e.g. text, alert-info, alert-error etc, or use tokens [alert-info] [/alert-info])
-		"Image"
-		"More information" (mailto: or https:) with convention (e.g., by mailto:)
 		{
-		  "name": "image",
-		  "type": "image",
-		  "label": "Profile picture",
-		  "optional": true,
-		  "description": "Picture of notice. If left blank a placeholder image will be displayed. Image dimensions should ideally be 150px by 150px to avoid scaling."
-		},
-		{
-		  "name": "name",
+		  "name": "title",
 		  "type": "text",
-		  "label": "Name",
+		  "label": "Title",
 		  "default": "",
-		  "description": "Name of notice"
+		  "description": "Title of notice"
 		},
 		{
-		  "name": "iwi",
+			"name": "image",
+			"type": "image",
+			"label": "Profile picture",
+			"optional": true,
+			"description": "Picture of notice. If left blank a placeholder image will be displayed. Image dimensions should ideally be 150px by 150px to avoid scaling."
+		  },
+		{
+		  "name": "update",
 		  "type": "text",
-		  "label": "Iwi/hapū",
+		  "label": "Update",
 		  "optional": true,
 		  "default": "",
-		  "description": "Enter one or more iwi/hapū, or leave blank to not display this field for this notice."
+		  "description": "[update convention here]"
 		},
 		{
-		  "name": "role",
+			"name": "content",
+			"type": "text","widget": "html",
+			"label": "Content",
+			"default": "",
+			"description": "Content of notice.",
+			"enterMode": "p",
+		  "tags": [
+				"strong",
+				"em",
+				"u",
+				"a",
+				"hr"
+		  ]
+		},
+		{
+		  "name": "moreinformation",
 		  "type": "text",
-		  "label": "Role",
+		  "label": "More information",
 		  "default": "",
-		  "description": "Role of notice e.g. Course Coordinator, Tutor"
+		  "description": "URL for more information. [Convention details]"
+		},
+		{
+		  "name": "visible",
+		  "type": "boolean",
+		  "label": "Visible",
+		  "default": true,
+		  "description": "Display this notice."
+		},
+		{
+			"name": "notes",
+			"type": "text","widget": "html",
+			"label": "Notes",
+			"default": "",
+			"description": "Administrative notes for this notice.",
+			"enterMode": "p",
+		  "tags": [
+				"strong",
+				"em",
+				"u",
+				"a",
+				"hr"
+		  ]
 		},
 				{
-		  "name": "office",
+		  "name": "owner",
 		  "type": "text",
-		  "label": "Office",
-		  "optional": true,
-		  "default": "",
-		  "description": "Office location and number. Leave blank to not display this field for this notice."
-		},
-				{
-		  "name": "officebuilding",
-		  "type": "text",
-		  "label": "Building",
-		  "optional": true,
-		  "default": "",
-		  "description": "Office building. Leave blank to not display this field for this notice."
-		},
-				{
-		  "name": "officecampus",
-		  "type": "text",
-		  "label": "Campus",
-		  "optional": true,
-		  "default": "",
-		  "description": "Office campus. Leave blank to not display this field for this notice."
+		  "label": "Owner",
+		  "description": "Owner or person responsible for this notice."
 		},
 		{
-		  "name": "officehours",
-		  "type": "text","widget": "html",
-		  "label": "Office Hours",
-		  "optional": true,
-		  "default": "",
-		  "description": "Office Hours. Leave blank to not display this field for this notice.",
-		  "enterMode": "p",
-		"tags": [
-			  "strong",
-			  "em",
-			  "u",
-			  "a",
-			  "hr"
-		]
-		},
-		{
-		  "name": "phone",
+		  "name": "autohide",
 		  "type": "text",
-		  "label": "Phone",
+		  "label": "Auto hide",
 		  "optional": true,
 		  "default": "",
-		  "description": "Contact phone number or extension. Leave blank to not display this field for this notice."
-		}
-		,
-		{
-		  "name": "email",
-		  "type": "text",
-		  "label": "Email",
-		  "optional": true,
-		  "default": "",
-		  "description": "Email address. Displayed as a clickable link. Leave blank to not display this field for this notice."
-		}
-		,
-		{
-		  "name": "shortbio",
-		  "type": "text",
-		  "widget": "textarea",
-		  "maxLength": 2048,
-		  "label": "Short biography",
-		  "optional": true,
-		  "default": "",
-		  "description": "Short biography. Two or three lines is the recommended maximum. Leave blank to not display this field for this notice."
-		}
-		,
-		{
-		  "name": "link",
-		  "type": "text",
-		  "label": "Link",
-		  "optional": true,
-		  "default": "",
-		  "description": "A link to further information for this notice. If present, a \"More...\" link will be displayed after the notice details. Leave blank to not use the feature for this notice."
+		  "description": "When to automatically hide this notice."
 		}
 	  ]
 	}
