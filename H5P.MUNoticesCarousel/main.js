@@ -40,14 +40,15 @@ H5P.MUNoticesCarousel = (function ($) {
 		if(notice.visible) {
 			if(firstItem) {
 				html += '<div class="carousel-item item active">';
-				firstItem = false;
 			}
 			else {
 				html += '<div class="carousel-item item">';
 			}
 
-			buttonHTML += `<button data-target="#stream-dashboard-notices" data-slide-to="${buttonIndex}" class="" aria-label="slide-0" aria-current="true">${buttonIndex + 1}</button>`;
+			buttonHTML += `<button data-target="#stream-dashboard-notices" data-slide-to="${buttonIndex}" class="${firstItem ? "active" : ""}" aria-label="slide-0" aria-current="true">${buttonIndex + 1}</button>`;
 			buttonIndex+=1;
+
+			firstItem = false;
 
 			html += `<div class="item__info"><div class="item__info_category category_support">Support</div><div class="item__info_update">${notice.update}</div></div>`;
 			html += `<div class="item__heading">`;
