@@ -67,6 +67,12 @@
 	overflow: auto;
 }
 
+.item > div {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--default_spacing);
+}
+
 #stream-dashboard-notices .item h5 {
 	font-size: 2rem;
 }
@@ -80,23 +86,25 @@
 }
 
 .item__heading {
-	margin-top: var(--default_spacing);
+	margin: 0 0 var(--default_spacing) 0;
 	line-height: 1.2;
 	word-break: break-word;
+	display: flex;
+    align-items: center;
 }
 
 .item__heading h6 {
 	font-size: 1.2rem;
 	font-weight: 500;
+	margin: 0;
 }
 
-.item__heading img {
+.item img {
 	display: block;
 	margin: 0;
 	padding: 0;
-	float: right;
-	max-height: 11em;
-	max-width: 50%;
+	max-height: 14em;
+	max-width: 30em;
 }
 
 .item__content {
@@ -143,26 +151,6 @@
 	text-decoration: none;
 }
 
-.item__info_category {
-	margin-right: 10px;
-}
-
-.category_alert {
-	color: var(--color-mu-red);
-}
-
-.category_exams {
-	color: var(--color-mu-ponga);
-}
-
-.category_support {
-	color: var(--color-mu-light-blue);
-}
-
-.category_information {
-	color: var(--color-mu-light-blue);
-}
-
 .item__info_update:empty {
 	display: none;
 }
@@ -171,8 +159,10 @@
 	font-weight: 500;
 	color: var(--color-grey-30);
 	padding-left: 0.8125rem;
+	margin-left: calc(0.8125rem - 6px);
 	position: relative;
 	display: block;
+	text-wrap: nowrap;
 }
 
 .item__info_update:before {

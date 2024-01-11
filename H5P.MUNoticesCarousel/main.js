@@ -28,7 +28,7 @@ H5P.MUNoticesCarousel = (function ($) {
 		$container.addClass("h5p-notices-onecol");
 	}
 
-	var html ='<div class="carousel slide" data-ride="carousel" data-interval="7000" id="stream-dashboard-notices">';
+	var html ='<div class="carousel slide" data-ride="carousel" data-interval="70000" id="stream-dashboard-notices">';
 	html += '<div class="carousel-inner" role="listbox">';
 
 	var buttonHTML = '<div class="carousel-indicators js-only">';
@@ -39,10 +39,10 @@ H5P.MUNoticesCarousel = (function ($) {
 	for(notice of this.options.notices) {
 		if(notice.visible) {
 			if(firstItem) {
-				html += '<div class="carousel-item item active">';
+				html += '<div class="carousel-item item active"><div>';
 			}
 			else {
-				html += '<div class="carousel-item item">';
+				html += '<div class="carousel-item item"><div>';
 			}
 
 			buttonHTML += `<button data-target="#stream-dashboard-notices" data-slide-to="${buttonIndex}" class="${firstItem ? "active" : ""}" aria-label="slide-0" aria-current="true">${buttonIndex + 1}</button>`;
@@ -50,12 +50,10 @@ H5P.MUNoticesCarousel = (function ($) {
 
 			firstItem = false;
 
-			html += `<div class="item__info"><div class="item__info_category category_support">Support</div><div class="item__info_update">${notice.update}</div></div>`;
-			html += `<div class="item__heading">`;
-			if (notice.image && notice.image.path) {
-				html += `<img alt="" src="${H5P.getPath(notice.image.path, this.id)}">`;
-			}
-			html += `<h6>${notice.title}</h6></div>`;
+			// html += `<div class="item__info"><div class="item__info_category category_support">Support</div><div class="item__info_update">${notice.update}</div></div>`;
+			html += `<div><div class="item__heading">`;
+
+			html += `<h6>${notice.title}</h6><div class="item__info item__info_update">${notice.update}</div></div>`;
 			html += `<div class="item__content">${notice.content}</div>`;
 
 			if(notice.moreinformation) {
@@ -69,6 +67,12 @@ H5P.MUNoticesCarousel = (function ($) {
 			}
 
 			html += '</div>';
+
+			if (notice.image && notice.image.path) {
+				html += `<div><img alt="" src="${H5P.getPath(notice.image.path, this.id)}"></div>`;
+			}
+
+			html += '</div></div>';
 		}
 	}
 	html += '</div>'; /* carousel-inner */
