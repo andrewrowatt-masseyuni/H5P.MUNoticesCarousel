@@ -11,25 +11,33 @@
   "label": "Notices",
   "entity": "notice",
   "min": 1,
-  "max": 20,
+  "max": 40,
   "field": {
 	  "name": "notice",
 	  "type": "group",
 	  "label": "Notice",
-	  "fields": [ 
+	  "fields": [
+		{
+			"name": "visible",
+			"type": "boolean",
+			"label": "Visible",
+			"default": true,
+			"description": "Display this notice."
+		  }, 
 		{
 		  "name": "title",
 		  "type": "text",
 		  "label": "Title",
 		  "default": "",
-		  "description": "Title of notice"
+		  "description": "Title of notice. Maximum of 64 characters.",
+		  "maxLength": 64
 		},
 		{
 			"name": "image",
 			"type": "image",
-			"label": "Profile picture",
+			"label": "Image",
 			"optional": true,
-			"description": "Picture of notice. If left blank a placeholder image will be displayed. Image dimensions should ideally be 150px by 150px to avoid scaling."
+			"description": "Image to use in the notice."
 		  },
 		{
 		  "name": "update",
@@ -37,7 +45,7 @@
 		  "label": "Update",
 		  "optional": true,
 		  "default": "",
-		  "description": "[update convention here]"
+		  "description": "Use one of the conventions i.e., 'Added 5 January', 'Updated 6 Janurary', 'Updated 4pm, 6 January'"
 		},
 		{
 			"name": "content",
@@ -58,22 +66,36 @@
 		  "name": "moreinformation",
 		  "type": "text",
 		  "label": "More information",
+		  "optional": true,
 		  "default": "",
-		  "description": "URL for more information. [Convention details]"
+		  "description": "URL for more information. If a URL is supplied, the text of the link will always be 'More information'. If this field is left blank, the owners name with the owners email will be used."
 		},
 		{
-		  "name": "visible",
-		  "type": "boolean",
-		  "label": "Visible",
-		  "default": true,
-		  "description": "Display this notice."
+		  "name": "owner",
+		  "type": "text",
+		  "label": "Owner",
+		  "description": "Owner or person responsible for this notice. This is not displayed unless 'More information' (above) is blank."
+		},
+		{
+			"name": "owneremail",
+			"type": "text",
+			"label": "Owner email address",
+			"description": "Valid email address for the owner or person responsible for this notice. This is not displayed unless 'More information' (above) is blank."
+		},
+		{
+			"name": "autohide",
+			"type": "text",
+			"label": "Auto hide",
+			"optional": true,
+			"default": "DO NOT USE",
+			"description": "When to automatically hide this notice."
 		},
 		{
 			"name": "notes",
 			"type": "text","widget": "html",
 			"label": "Notes",
 			"default": "",
-			"description": "Administrative notes for this notice.",
+			"description": "Administrative notes for this notice. These notes are not displayed.",
 			"enterMode": "p",
 		  "tags": [
 				"strong",
@@ -82,20 +104,6 @@
 				"a",
 				"hr"
 		  ]
-		},
-				{
-		  "name": "owner",
-		  "type": "text",
-		  "label": "Owner",
-		  "description": "Owner or person responsible for this notice."
-		},
-		{
-		  "name": "autohide",
-		  "type": "text",
-		  "label": "Auto hide",
-		  "optional": true,
-		  "default": "",
-		  "description": "When to automatically hide this notice."
 		}
 	  ]
 	}

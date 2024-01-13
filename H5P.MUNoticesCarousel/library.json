@@ -2,8 +2,8 @@
   "title": "MU Notices Carousel",
   "description": "H5P widget to display notices, events, and items of interest in a structured form using a carousel-style presentation.",
   "majorVersion": 1,
-  "minorVersion": 1,
-  "patchVersion": 36,
+  "minorVersion": 2,
+  "patchVersion": 60,
   "runnable": 1,
   "author": "Massey University",
   "license": "cc-by-sa",
@@ -13,10 +13,12 @@
     "minorVersion": 0
   },
   "preloadedJs": [
-    { "path": "main.js" }
+    { "path": "main.js"},
+    { "path": "swiper/swiper-bundle.min.js" }
   ],
   "preloadedCss": [
-    {"path": "main.css"}
+    {"path": "main.css"},
+    {"path": "swiper/swiper-bundle.min.css"}
   ],
   "editorDependencies": [
     {
