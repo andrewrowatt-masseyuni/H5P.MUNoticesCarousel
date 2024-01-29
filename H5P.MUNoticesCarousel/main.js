@@ -55,7 +55,7 @@ H5P.MUNoticesCarousel = (function ($) {
 
 			html += `<div><div class="item__heading">`;
 
-			html += `<h6>${notice.title}</h6><div class="item__info item__info_update">${notice.update}</div></div>`;
+			html += `<h6 title="${notice.title}">${notice.title}</h6><div class="item__info">${notice.update}</div></div>`;
 			html += `<div class="item__content">${notice.content}</div>`;
 
 			html += `<div class="item__more_info">`;

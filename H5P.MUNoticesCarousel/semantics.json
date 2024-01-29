@@ -117,10 +117,6 @@
     {
       "value": "auto",
       "label": "Auto"
-    },
-    {
-      "value": "1",
-      "label": "One column"
     }
   ],
   "default": "auto"
