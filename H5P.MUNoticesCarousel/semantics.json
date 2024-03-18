@@ -83,27 +83,11 @@
 			"description": "Valid email address for the owner or person responsible for this notice. This is not displayed unless 'More information' (above) is blank."
 		},
 		{
-			"name": "autohide",
-			"type": "text",
-			"label": "Auto hide",
-			"optional": true,
-			"default": "DO NOT USE",
-			"description": "When to automatically hide this notice."
-		},
-		{
 			"name": "notes",
-			"type": "text","widget": "html",
+			"type": "text",
 			"label": "Notes",
 			"default": "",
-			"description": "Administrative notes for this notice. These notes are not displayed.",
-			"enterMode": "p",
-		  "tags": [
-				"strong",
-				"em",
-				"u",
-				"a",
-				"hr"
-		  ]
+			"description": "Administrative notes and next steps/actions for this notice e.g., when to hide or remove it. These notes are not displayed."
 		}
 	  ]
 	}
