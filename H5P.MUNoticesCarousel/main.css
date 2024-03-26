@@ -136,12 +136,16 @@
 }
 
 .item__content {
-	line-height: 24px;
+	line-height: 27px;
 }
 
 .item__content p {
 	margin: 0 0 var(--default_spacing) 0;
 	padding: 0;
+}
+
+.item__content strong {
+	font-weight: 500;
 }
 
 .item a {

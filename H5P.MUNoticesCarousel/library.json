@@ -3,7 +3,7 @@
   "description": "H5P widget to display notices, events, and items of interest in a structured form using a carousel-style presentation.",
   "majorVersion": 1,
   "minorVersion": 2,
-  "patchVersion": 69,
+  "patchVersion": 71,
   "runnable": 1,
   "author": "Massey University",
   "license": "cc-by-sa",
