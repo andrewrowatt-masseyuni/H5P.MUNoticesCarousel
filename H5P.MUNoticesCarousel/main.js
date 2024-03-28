@@ -79,15 +79,21 @@ H5P.MUNoticesCarousel = (function ($) {
 
 	html += '<div class="swiper-pagination"></div>';
 	html += '<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>';
+	html += '<div class="autoplay-progress"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"></circle></svg><span></span></div>';
 	html += '</div></div>'; /* End .swiper and #stream */
 	
 	$container.append(html);
 	
 	$(document).ready(function () {
+		// https://codesandbox.io/p/sandbox/kd5g73?file=%2Findex.html%3A111%2C5-112%2C79
+		const progressCircle = document.querySelector(".autoplay-progress svg");
+    	const progressContent = document.querySelector(".autoplay-progress span");
+
 		// https://swiperjs.com/swiper-api#initialize-swiper
 
 		const swiper = new Swiper('.swiper', {
 			direction: 'horizontal',
+			spaceBetween: 30,
 			autoplay: {
 				delay: 5000,
 				pauseOnMouseEnter: true,
@@ -105,6 +111,13 @@ H5P.MUNoticesCarousel = (function ($) {
 			  nextEl: '.swiper-button-next',
 			  prevEl: '.swiper-button-prev',
 			},
+
+			on: {
+				autoplayTimeLeft(s, time, progress) {
+				  progressCircle.style.setProperty("--progress", 1 - progress);
+				  progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+				}
+			  },
 		  });		
 	});
   };
