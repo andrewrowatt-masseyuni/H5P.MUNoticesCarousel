@@ -1,0 +1,1 @@
+Enable variable display times for notices
